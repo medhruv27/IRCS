@@ -9,3 +9,5 @@ Currently, two official plugins are available:
 
 in backend>>
 npm i bcrypt cloudinary cookie-parser cors dotenv express mongoose express-fileupload jsonwebtoken validator 
+to start backend>>
+npm run dev

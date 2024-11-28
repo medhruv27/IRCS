@@ -88,6 +88,7 @@ export const getAllAppointments = catchAsyncErrors(async (req, res, next) => {
     appointments,
   });
 });
+
 export const updateAppointmentStatus = catchAsyncErrors(
   async (req, res, next) => {
     const { id } = req.params;
@@ -103,6 +104,7 @@ export const updateAppointmentStatus = catchAsyncErrors(
     res.status(200).json({
       success: true,
       message: "Appointment Status Updated!",
+      appointment
     });
   }
 );
