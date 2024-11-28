@@ -5,7 +5,7 @@ import { generateToken } from "../utils/jwtToken.js";
 import cloudinary from "cloudinary";
 
 export const patientRegister = catchAsyncErrors(async (req, res, next) => {
-  const { firstName, lastName, email, phone, aadhar, dob, gender, password } =
+  const { firstName, lastName, email, phone, aadhar, dob, gender, password ,role} =
     req.body;
   if (
     !firstName ||
@@ -32,7 +32,7 @@ export const patientRegister = catchAsyncErrors(async (req, res, next) => {
       gender,
       dob,
       aadhar,
-      role: "Patient",
+      role: role || "Patient",
     });
     generateToken(user, "User Registered!", 200, res);
   });
@@ -78,10 +78,10 @@ export const login = catchAsyncErrors(async (req, res, next) => {
   if (role !== user.role) {
     return next(new ErrorHandler(`User Not Found With This Role!`, 400));
   }
-  generateToken(user, "User Registered!", 200, res);
-});   
-//   generateToken(user, "Login Successfully!", 201, res);
-// });
+//   generateToken(user, "User Registered!", 200, res);
+// });   
+  generateToken(user, "Login Successfully!", 201, res);
+});
 
 export const addNewAdmin = catchAsyncErrors(async (req, res, next) => {
   const { firstName, lastName, email, phone, aadhar, dob, gender, password } =
@@ -165,12 +165,13 @@ export const logoutPatient = catchAsyncErrors(async (req, res, next) => {
       message: "Patient Logged Out Successfully.",
     });
 });
+
 export const addNewDoctor = catchAsyncErrors(async (req, res, next) => {
   if (!req.files || Object.keys(req.files).length === 0) {
     return next(new ErrorHandler("Doctor Avatar Required!", 400));
   }
   const { docAvatar } = req.files;
-  const allowedFormats = ["image/png", "image/jpeg", "image/webp"];
+  const allowedFormats = ["image/png", "image/jpeg", "image/webp" ,"image/jpg",];
   if (!allowedFormats.includes(docAvatar.mimetype)) {
     return next(new ErrorHandler("File Format Not Supported!", 400));
   }
@@ -184,7 +185,10 @@ export const addNewDoctor = catchAsyncErrors(async (req, res, next) => {
     gender,
     password,
     doctorDepartment,
+    // docAvatar,
   } = req.body;
+
+
   if (
     !firstName ||
     !lastName ||
@@ -194,11 +198,12 @@ export const addNewDoctor = catchAsyncErrors(async (req, res, next) => {
     !dob ||
     !gender ||
     !password ||
-    !doctorDepartment ||
-    !docAvatar
+    !doctorDepartment //||
+    // !docAvatar
   ) {
     return next(new ErrorHandler("Please Fill Full Form!", 400));
   }
+
   const isRegistered = await User.findOne({ email });
   if (isRegistered) {
     return next(
