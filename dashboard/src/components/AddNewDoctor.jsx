@@ -5,7 +5,7 @@ import { Context } from "../main";
 import axios from "axios";
 
 const AddNewDoctor = () => {
-  const { isAuthenticated, setIsAuthenticated } = useContext(Context);
+  const { isAuthenticated } = useContext(Context);
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -64,7 +64,7 @@ const AddNewDoctor = () => {
         })
         .then((res) => {
           toast.success(res.data.message);
-          setIsAuthenticated(true);
+          // setIsAuthenticated(true);
           navigateTo("/");
           setFirstName("");
           setLastName("");
@@ -85,8 +85,8 @@ const AddNewDoctor = () => {
   }
   return (
     <section className="page">
-      <section className="container add-doctor-form">
-        <img src="/logo.png" alt="logo" className="logo"/>
+      <section className="container form-component add-doctor-form">
+        <img src="/ircslogo.png" alt="logo" className="logo"/>
         <h1 className="form-title">REGISTER A NEW DOCTOR</h1>
         <form onSubmit={handleAddNewDoctor}>
           <div className="first-wrapper">
@@ -126,8 +126,8 @@ const AddNewDoctor = () => {
               />
               <input
                 type="number"
-                placeholder="NIC"
-                value={nic}
+                placeholder="Aadhar"
+                value={aadhar}
                 onChange={(e) => setAadhar(e.target.value)}
               />
               <input
