@@ -45,8 +45,10 @@ const Login = () => {
   return (
     <>
       <section className="container form-component">
-        <img src="/logo.png" alt="logo" className="logo" />
-        <h1 className="form-title">WELCOME TO ZEECARE</h1>
+        <div >
+        <img src="/ircslogo.png" alt="logo" className="logo" />
+        </div>
+        <h1 className="form-title">WELCOME TO IRCS</h1>
         <p>Only Admins Are Allowed To Access These Resources!</p>
         <form onSubmit={handleLogin}>
           <input

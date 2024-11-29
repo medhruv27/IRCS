@@ -5,40 +5,40 @@ import "react-multi-carousel/lib/styles.css";
 const Departments = () => {
   const departmentsArray = [
     {
-      name: "Pediatrics",
-      imageUrl: "/departments/pedia.jpg",
+      name: "Donation Camp",
+      imageUrl: "/departments/NirankariBloodDonationCamp.jpeg",
     },
     {
-      name: "Orthopedics",
-      imageUrl: "/departments/ortho.jpg",
+      name: "Relief Supplies",
+      imageUrl: "/departments/Keralafloods.jpg",
     },
     {
-      name: "Cardiology",
-      imageUrl: "/departments/cardio.jpg",
+      name: "Livelihood Programs",
+      imageUrl: "/departments/manipur-livelihood3.jpg",
     },
     {
-      name: "Neurology",
-      imageUrl: "/departments/neuro.jpg",
+      name: "First Aid",
+      imageUrl: "/departments/FirstAid.jpg",
     },
     {
-      name: "Oncology",
-      imageUrl: "/departments/onco.jpg",
+      name: "Youth Program",
+      imageUrl: "/departments/youth.jpeg",
     },
     {
-      name: "Radiology",
-      imageUrl: "/departments/radio.jpg",
+      name: "TB Program",
+      imageUrl: "/departments/TBproject.jpg",
     },
     {
-      name: "Physical Therapy",
-      imageUrl: "/departments/therapy.jpg",
+      name: "Oxygen Supply",
+      imageUrl: "/departments/oxy.jpg",
     },
     {
-      name: "Dermatology",
-      imageUrl: "/departments/derma.jpg",
+      name: "Medical Support",
+      imageUrl: "/departments/med.jpg",
     },
     {
-      name: "ENT",
-      imageUrl: "/departments/ent.jpg",
+      name: "Elder Support",
+      imageUrl: "/departments/elder care.png",
     },
   ];
 
@@ -68,7 +68,7 @@ const Departments = () => {
   return (
     <>
       <div className="container departments">
-        <h2>Departments</h2>
+        <h2>Our service</h2>
         <Carousel
           responsive={responsive}
           removeArrowOnDeviceType={[
@@ -82,7 +82,7 @@ const Departments = () => {
             return (
               <div key={index} className="card">
                 <div className="depart-name">{depart.name}</div>
-                <img src={depart.imageUrl} alt="Department" />
+                <img src={depart.imageUrl} alt="Our Service" />
               </div>
             );
           })}

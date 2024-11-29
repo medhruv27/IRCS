@@ -8,32 +8,37 @@ const Footer = () => {
     {
       id: 1,
       day: "Monday",
-      time: "9:00 AM - 11:00 PM",
+      time: "Open 24 hours",
     },
     {
       id: 2,
       day: "Tuesday",
-      time: "12:00 PM - 12:00 AM",
+      time: "Open 24 hours",
     },
     {
       id: 3,
       day: "Wednesday",
-      time: "10:00 AM - 10:00 PM",
+      time: "Open 24 hours",
     },
     {
       id: 4,
       day: "Thursday",
-      time: "9:00 AM - 9:00 PM",
+      time: "Open 24 hours",
     },
     {
       id: 5,
-      day: "Monday",
-      time: "3:00 PM - 9:00 PM",
+      day: "Friday",
+      time: "Open 24 hours",
     },
     {
       id: 6,
       day: "Saturday",
-      time: "9:00 AM - 3:00 PM",
+      time: "Open 24 hours",
+    },
+    {
+      id: 7,
+      day: "Sunday",
+      time: "Open 24 hours",
     },
   ];
 
@@ -42,8 +47,8 @@ const Footer = () => {
       <footer className={"container"}>
         <hr />
         <div className="content">
-          <div>
-            <img src="/logo.png" alt="logo" className="logo-img"/>
+          <div >
+            <img src="/ircslogo.png" alt="logo" className="logo-img"/>
           </div>
           <div>
             <h4>Quick Links</h4>
@@ -68,15 +73,20 @@ const Footer = () => {
             <h4>Contact</h4>
             <div>
               <FaPhone />
-              <span>999-999-9999</span>
+              <span>(+91-11) 23716441/2/3</span>
             </div>
             <div>
               <MdEmail />
-              <span>zeelab@gmail.com</span>
+              {/* <span>ircs@indianredcross.org</span> */}
+              <a href="mailto:ircs@indianredcross.org">ircs@indianredcross.org</a>
+
             </div>
             <div>
               <FaLocationArrow />
-              <span>Karachi, Pakistan</span>
+              <span>IRCS
+                      1, Red Cross Road
+                      New Delhi - 110001
+                      INDIA</span>
             </div>
           </div>
         </div>

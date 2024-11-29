@@ -11,3 +11,12 @@ in backend>>
 npm i bcrypt cloudinary cookie-parser cors dotenv express mongoose express-fileupload jsonwebtoken validator 
 to start backend>>
 npm run dev
+
+
+in frontend>>
+npm i axios react-icons react-multi-carousel react-router-dom react-toastify
+
+npm run dev to start
+
+in dashboard>>
+npm i axios react-icons react-router-dom react-toastify
