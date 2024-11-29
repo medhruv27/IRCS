@@ -64,15 +64,13 @@ const Dashboard = () => {
                 </h5>
               </div>
               <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Facilis, nam molestias. Eaque molestiae ipsam commodi neque.
-                Assumenda repellendus necessitatibus itaque.
+              review your upcoming appointments for blood donation. Stay updated to ensure timely assistance and care for your donors.
               </p>
             </div>
           </div>
           <div className="secondBox">
             <p>Total Appointments</p>
-            <h3>1500</h3>
+            <h3>150</h3>
           </div>
           <div className="thirdBox">
             <p>Registered Doctors</p>
