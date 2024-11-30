@@ -27,7 +27,7 @@ const Doctors = () => {
   }
   return (
     <section className="page doctors">
-      <h1>DOCTORS</h1>
+      <h1>Hospitals</h1>
       <div className="banner">
         {doctors && doctors.length > 0 ? (
           doctors.map((element) => {
@@ -49,13 +49,7 @@ const Doctors = () => {
                     DOB: <span>{element.dob.substring(0, 10)}</span>
                   </p>
                   <p>
-                    Department: <span>{element.doctorDepartment}</span>
-                  </p>
-                  <p>
-                    Aadhar: <span>{element.aadhar}</span>
-                  </p>
-                  <p>
-                    Gender: <span>{element.gender}</span>
+                    Address <span>{element.doctorDepartment}</span>
                   </p>
                 </div>
               </div>
