@@ -20,7 +20,7 @@ router.post("/patient/register", patientRegister);
 router.post("/login", login);
 router.get("/patient/me", isPatientAuthenticated, getUserDetails);
 router.get("/patient/logout", isPatientAuthenticated, logoutPatient);
-//doctors
+//hospital
 router.post("/hospital/addnew", isAdminAuthenticated, addNewDoctor);
 router.get("/hospitals", getAllDoctors);
 //admin
