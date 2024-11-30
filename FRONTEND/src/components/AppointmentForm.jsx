@@ -12,29 +12,19 @@ const AppointmentForm = () => {
   const [dob, setDob] = useState("");
   const [gender, setGender] = useState("");
   const [appointmentDate, setAppointmentDate] = useState("");
-  const [department, setDepartment] = useState("Pediatrics");
+  const [department, setDepartment] = useState("A");
   const [doctorFirstName, setDoctorFirstName] = useState("");
   const [doctorLastName, setDoctorLastName] = useState("");
   const [address, setAddress] = useState("");
   const [hasVisited, setHasVisited] = useState(false);
 
-  const departmentsArray = [
-    "Pediatrics",
-    "Orthopedics",
-    "Cardiology",
-    "Neurology",
-    "Oncology",
-    "Radiology",
-    "Physical Therapy",
-    "Dermatology",
-    "ENT",
-  ];
+  const departmentsArray = ["A+", "A", "B+", "B", "O+", "O", "AB+", "AB"];
 
   const [doctors, setDoctors] = useState([]);
   useEffect(() => {
     const fetchDoctors = async () => {
       const { data } = await axios.get(
-        "http://localhost:4000/api/v1/user/doctors",
+        "http://localhost:4000/api/v1/user/hospitals",
         { withCredentials: true }
       );
       setDoctors(data.doctors);
@@ -173,7 +163,7 @@ const AppointmentForm = () => {
               }}
               disabled={!department}
             >
-              <option value="">Select Doctor</option>
+              <option value="">Select Hospital</option>
               {doctors
                 .filter((doctor) => doctor.doctorDepartment === department)
                 .map((doctor, index) => (
