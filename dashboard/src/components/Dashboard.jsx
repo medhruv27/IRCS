@@ -58,13 +58,11 @@ const Dashboard = () => {
             <div className="content">
               <div>
                 <p>Hello ,</p>
-                <h5>
-                  {admin &&
-                    `${admin.firstName} ${admin.lastName}`}{" "}
-                </h5>
+                <h5>{admin && `${admin.firstName} ${admin.lastName}`} </h5>
               </div>
               <p>
-              review your upcoming appointments for blood donation. Stay updated to ensure timely assistance and care for your donors.
+                review your upcoming appointments for blood donation. Stay
+                updated to ensure timely assistance and care for your donors.
               </p>
             </div>
           </div>
@@ -73,7 +71,7 @@ const Dashboard = () => {
             <h3>150</h3>
           </div>
           <div className="thirdBox">
-            <p>Registered Doctors</p>
+            <p>Registered Hospitals</p>
             <h3>10</h3>
           </div>
         </div>
@@ -84,8 +82,8 @@ const Dashboard = () => {
               <tr>
                 <th>Patient</th>
                 <th>Date</th>
-                <th>Doctor</th>
-                <th>Department</th>
+                <th>Hospital</th>
+                <th>Blood Group</th>
                 <th>Status</th>
                 <th>Visited</th>
               </tr>
@@ -123,7 +121,13 @@ const Dashboard = () => {
                           </option>
                         </select>
                       </td>
-                      <td>{appointment.hasVisited === true ? <GoCheckCircleFill className="green"/> : <AiFillCloseCircle className="red"/>}</td>
+                      <td>
+                        {appointment.hasVisited === true ? (
+                          <GoCheckCircleFill className="green" />
+                        ) : (
+                          <AiFillCloseCircle className="red" />
+                        )}
+                      </td>
                     </tr>
                   ))
                 : "No Appointments Found!"}
