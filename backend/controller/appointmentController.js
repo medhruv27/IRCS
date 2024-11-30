@@ -104,7 +104,7 @@ export const updateAppointmentStatus = catchAsyncErrors(
     res.status(200).json({
       success: true,
       message: "Appointment Status Updated!",
-      appointment
+      appointment,
     });
   }
 );
@@ -118,5 +118,15 @@ export const deleteAppointment = catchAsyncErrors(async (req, res, next) => {
   res.status(200).json({
     success: true,
     message: "Appointment Deleted!",
+  });
+});
+export const getDashboardStats = catchAsyncErrors(async (req, res, next) => {
+  const totalDoctors = await User.countDocuments({ role: "Doctor" });
+  const totalAppointments = await Appointment.countDocuments();
+
+  res.status(200).json({
+    success: true,
+    totalDoctors,
+    totalAppointments,
   });
 });

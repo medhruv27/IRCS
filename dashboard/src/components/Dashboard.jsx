@@ -8,8 +8,24 @@ import { AiFillCloseCircle } from "react-icons/ai";
 
 const Dashboard = () => {
   const [appointments, setAppointments] = useState([]);
+  const [stats, setStats] = useState({ totalDoctors: 0, totalAppointments: 0 });
 
   useEffect(() => {
+    const fetchStats = async () => {
+      try {
+        const { data } = await axios.get(
+          "http://localhost:4000/api/v1/appointment/dashboard-stats",
+          { withCredentials: true }
+        );
+        setStats({
+          totalDoctors: data.totalDoctors,
+          totalAppointments: data.totalAppointments,
+        });
+      } catch (error) {
+        toast.error("Failed to load dashboard stats.");
+      }
+    };
+
     const fetchAppointments = async () => {
       try {
         const { data } = await axios.get(
@@ -21,6 +37,8 @@ const Dashboard = () => {
         setAppointments([]);
       }
     };
+
+    fetchStats();
     fetchAppointments();
   }, []);
 
@@ -61,18 +79,18 @@ const Dashboard = () => {
                 <h5>{admin && `${admin.firstName} ${admin.lastName}`} </h5>
               </div>
               <p>
-                review your upcoming appointments for blood donation. Stay
+                Review your upcoming appointments for blood donation. Stay
                 updated to ensure timely assistance and care for your donors.
               </p>
             </div>
           </div>
           <div className="secondBox">
             <p>Total Appointments</p>
-            <h3>150</h3>
+            <h3>{stats.totalAppointments}</h3>
           </div>
           <div className="thirdBox">
-            <p>Registered Hospitals</p>
-            <h3>10</h3>
+            <p>Registered Doctors</p>
+            <h3>{stats.totalDoctors}</h3>
           </div>
         </div>
         <div className="banner">
@@ -133,8 +151,6 @@ const Dashboard = () => {
                 : "No Appointments Found!"}
             </tbody>
           </table>
-
-          {}
         </div>
       </section>
     </>
