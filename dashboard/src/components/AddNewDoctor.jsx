@@ -86,18 +86,24 @@ const AddNewDoctor = () => {
   return (
     <section className="page">
       <section className="container form-component add-doctor-form">
-        <img src="/ircslogo.png" alt="logo" className="logo"/>
+        <img src="/ircslogo.png" alt="logo" className="logo" />
         <h1 className="form-title">REGISTER A NEW DOCTOR</h1>
         <form onSubmit={handleAddNewDoctor}>
           <div className="first-wrapper">
-            <div>
+            <div className="wrap-image">
               <img
                 src={
                   docAvatarPreview ? `${docAvatarPreview}` : "/docHolder.jpg"
                 }
                 alt="Doctor Avatar"
               />
-              <input type="file" onChange={handleAvatar} />
+
+              <input
+                id="file-upload"
+                className="file-box hidden"
+                type="file"
+                onChange={handleAvatar}
+              />
             </div>
             <div>
               <input
