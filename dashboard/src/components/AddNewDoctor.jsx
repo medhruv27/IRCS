@@ -21,17 +21,7 @@ const AddNewDoctor = () => {
 
   const navigateTo = useNavigate();
 
-  const departmentsArray = [
-    "Pediatrics",
-    "Orthopedics",
-    "Cardiology",
-    "Neurology",
-    "Oncology",
-    "Radiology",
-    "Physical Therapy",
-    "Dermatology",
-    "ENT",
-  ];
+  const departmentsArray = ["A+", "A", "B+", "B", "O+", "O", "AB+", "AB"];
 
   const handleAvatar = (e) => {
     const file = e.target.files[0];
@@ -87,7 +77,7 @@ const AddNewDoctor = () => {
     <section className="page">
       <section className="container form-component add-doctor-form">
         <img src="/ircslogo.png" alt="logo" className="logo" />
-        <h1 className="form-title">REGISTER A NEW DOCTOR</h1>
+        <h1 className="form-title">REGISTER A NEW HOSPITAL</h1>
         <form onSubmit={handleAddNewDoctor}>
           <div className="first-wrapper">
             <div className="wrap-image">
@@ -132,13 +122,13 @@ const AddNewDoctor = () => {
               />
               <input
                 type="number"
-                placeholder="Aadhar"
+                placeholder="Hospital ID"
                 value={aadhar}
                 onChange={(e) => setAadhar(e.target.value)}
               />
               <input
                 type={"date"}
-                placeholder="Date of Birth"
+                placeholder="Last Date of Requirement"
                 value={dob}
                 onChange={(e) => setDob(e.target.value)}
               />
@@ -146,9 +136,9 @@ const AddNewDoctor = () => {
                 value={gender}
                 onChange={(e) => setGender(e.target.value)}
               >
-                <option value="">Select Gender</option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
+                <option value="">Select way of donation</option>
+                <option value="Male">onSite</option>
+                <option value="Female">atHome</option>
               </select>
               <input
                 type="password"
@@ -162,7 +152,7 @@ const AddNewDoctor = () => {
                   setDoctorDepartment(e.target.value);
                 }}
               >
-                <option value="">Select Department</option>
+                <option value="">Select Blood Group</option>
                 {departmentsArray.map((depart, index) => {
                   return (
                     <option value={depart} key={index}>
@@ -171,7 +161,7 @@ const AddNewDoctor = () => {
                   );
                 })}
               </select>
-              <button type="submit">Register New Doctor</button>
+              <button type="submit">Register New Hospital</button>
             </div>
           </div>
         </form>
