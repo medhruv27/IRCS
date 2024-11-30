@@ -37,7 +37,7 @@ This is a React-based web application for blood donation. The platform connects 
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/blood-donation-website.git
+git clone https://github.com/your-username/IRCS.git
 ```
 
 2. Navigate to the project directory:
