@@ -46,10 +46,14 @@ const Doctors = () => {
                     Phone: <span>{element.phone}</span>
                   </p>
                   <p>
-                    DOB: <span>{element.dob.substring(0, 10)}</span>
+                    Last day of donation{" "}
+                    <span>{element.dob.substring(0, 10)}</span>
                   </p>
                   <p>
-                    Address <span>{element.doctorDepartment}</span>
+                    Blood Required <span>{element.doctorDepartment}</span>
+                  </p>
+                  <p>
+                    Way of Donation <span>{element.gender}</span>
                   </p>
                 </div>
               </div>

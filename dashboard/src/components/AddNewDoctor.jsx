@@ -137,8 +137,8 @@ const AddNewDoctor = () => {
                 onChange={(e) => setGender(e.target.value)}
               >
                 <option value="">Select way of donation</option>
-                <option value="Male">onSite</option>
-                <option value="Female">atHome</option>
+                <option value="onSite">onSite</option>
+                <option value="atHome">atHome</option>
               </select>
               <input
                 type="password"
