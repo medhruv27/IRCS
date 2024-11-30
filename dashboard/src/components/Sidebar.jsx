@@ -37,7 +37,7 @@ const Sidebar = () => {
     setShow(!show);
   };
   const gotoDoctorsPage = () => {
-    navigateTo("/doctors");
+    navigateTo("/hospitals");
     setShow(!show);
   };
   const gotoMessagesPage = () => {
@@ -45,7 +45,7 @@ const Sidebar = () => {
     setShow(!show);
   };
   const gotoAddNewDoctor = () => {
-    navigateTo("/doctor/addnew");
+    navigateTo("/hospital/addnew");
     setShow(!show);
   };
   const gotoAddNewAdmin = () => {
